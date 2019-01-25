@@ -6,7 +6,7 @@ namespace=$1
 serverurl=$2
 servicecidr=$3
 podcidr=$4
-domain=${5:-svc.cluster.local}
+domain=${5:-svc.biger.corp}
 
 # Server name is in the form "udp://vpn.example.com:1194"
 if [[ "$serverurl" =~ ^((udp|tcp)(4|6)?://)?([0-9a-zA-Z\.\-]+)(:([0-9]+))?$ ]]; then
@@ -83,6 +83,7 @@ spec:
   - port: ${OVPN_PORT}
     protocol: ${OVPN_PROTO}
     targetPort: 1194
+    nodePort: 31194
   selector:
     openvpn: ${OVPN_CN}
 ---
