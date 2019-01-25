@@ -3,7 +3,6 @@ kind: ConfigMap
 metadata:
   name: openvpn-ccd
 data:
-  vpn1: "ifconfig-push 10.140.0.1 255.255.255.0"
   vpn2: "ifconfig-push 10.140.0.2 255.255.255.0"
   vpn3: "ifconfig-push 10.140.0.3 255.255.255.0"
   vpn4: "ifconfig-push 10.140.0.4 255.255.255.0"
@@ -31,11 +30,6 @@ metadata:
   name: openvpn-portmapping
 data:
   20080: "example:80"
-  10011: "vpn1:10011"
-  10012: "vpn1:10012"
-  10013: "vpn1:10013"
-  10014: "vpn1:10014"
-  10015: "vpn1:10015"
   10021: "vpn2:10021"
   10022: "vpn2:10022"
   10023: "vpn2:10023"
