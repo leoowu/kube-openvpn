@@ -109,6 +109,8 @@ if [ $DEBUG ]; then
     echo "openvpn.conf:"
     cat $OVPN_CONFIG
 fi
+##
+sysctl -w net.ipv4.ip_forward=1
 
 echo "$(date "+%a %b %d %H:%M:%S %Y") Running 'openvpn ${ARGS[@]} ${USER_ARGS[@]}'"
 exec openvpn "${ARGS[@]}" "${USER_ARGS[@]}" 1> /dev/stderr 2> /dev/stderr
